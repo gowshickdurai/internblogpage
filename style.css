@@ -1,0 +1,178 @@
+/* --- CSS Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f8fa; /* Soft white/cool blue-gray background */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Styling --- */
+.blog-header {
+    background-color: #2563eb; /* Bright blue */
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+.blog-header .tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* --- Main Layout & Grid --- */
+.container {
+    max-width: 1100px;
+    margin: -3rem auto 3rem auto; /* Overlap the header slightly for a modern look */
+    padding: 0 1.5rem;
+    flex: 1; /* Pushes footer to bottom */
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Blog Card Styling --- */
+.blog-card {
+    background-color: #fff;
+    border-radius: 16px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Soft box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth CSS transitions */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effects: Slight card elevation and shadow increase */
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-content h2 {
+    font-size: 1.4rem;
+    color: #1e3a8a; /* Dark blue */
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+/* Meta info: Author & Date */
+.post-meta {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.post-meta .author {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.post-meta .separator {
+    margin: 0 0.5rem;
+}
+
+.post-summary {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the 'read more' link to the bottom */
+}
+
+/* Read More Details & Action Button */
+.read-more-details {
+    align-self: flex-start;
+}
+
+.action-btn {
+    display: inline-block;
+    background-color: #2563eb; /* Bright blue */
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    list-style: none; /* Hides default triangle in most browsers */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn::-webkit-details-marker {
+    display: none; /* Hides default triangle in WebKit browsers */
+}
+
+.action-btn:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.expanded-content {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 0.95rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.expanded-content p {
+    margin-bottom: 0.8rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Footer Styling --- */
+.blog-footer {
+    background-color: #1e3a8a; /* Dark blue footer */
+    color: #e2e8f0;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .blog-header {
+        padding: 3rem 1rem;
+    }
+
+    .blog-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        margin-top: 2rem; /* Remove header overlap on smaller screens */
+    }
+}
